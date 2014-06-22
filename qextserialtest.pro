@@ -13,8 +13,15 @@ TEMPLATE = app
 
 
 SOURCES += main.cpp\
-        mainwindow.cpp
+        mainwindow.cpp\
+        serial.cpp
 
-HEADERS  += mainwindow.h
+HEADERS  += mainwindow.h\
+            serial.h
 
 FORMS    += mainwindow.ui
+
+unix|win32: LIBS += -L$$PWD/lib -lQt5ExtSerialPort1
+
+INCLUDEPATH += $$PWD/include
+DEPENDPATH += $$PWD/include
